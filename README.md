@@ -1,49 +1,71 @@
-#!/bin/bash
+# Open Source Software Audit Project
 
-echo "===== System Information ====="
-echo "User: $(whoami)"
-echo "Kernel: $(uname -r)"
-echo "Uptime: $(uptime -p)"
-echo "Date: $(date)"
-#!/bin/bash
+## 📌 Student Details
+Name: Rishi Singh  
+Course: B.Tech (ECE)  
+Project: Open Source Software Audit  
 
-if dpkg -l | grep -q git
-then
-    echo "Git is installed"
-    git --version
-else
-    echo "Git is NOT installed"
-fi#!/bin/bash
+---
 
-echo "===== Directory Audit ====="
+## 💡 Selected Software
+**Git**
 
-for dir in /etc /home /usr/bin
-do
-    echo "Checking: $dir"
-    ls -ld $dir
-    du -sh $dir 2>/dev/null
-    echo "-------------------------"
-done#!/bin/bash
+Git is a distributed version control system used to track changes in source code and enable collaboration between developers.
 
-count=0
+---
 
-while read line
-do
-    if echo "$line" | grep -iq error
-    then
-        count=$((count+1))
-    fi
-done < /var/log/syslog
+## 🎯 Project Objective
+The objective of this project is to analyze an open source software (Git), understand its origin, licensing, ecosystem, and compare it with proprietary software. Additionally, shell scripting is used to interact with the Linux system.
 
-echo "Total Error Count: $count"#!/bin/bash
+---
 
-read -p "Enter tool name: " tool
-read -p "What does freedom mean to you: " freedom
-read -p "What will you build: " build
+## 🐧 Environment Used
+- Ubuntu (WSL on Windows)
+- Bash Shell
 
-echo "===== Open Source Manifesto =====" > manifesto.txt
-echo "I use $tool in my workflow." >> manifesto.txt
-echo "Freedom means $freedom." >> manifesto.txt
-echo "I plan to build $build and share it." >> manifesto.txt
+---
 
-cat manifesto.txt
+## 📂 Scripts Included
+
+### 1. System Information Script (`script1.sh`)
+Displays system details such as:
+- User name
+- Kernel version
+- Uptime
+- Current date
+
+---
+
+### 2. Git Checker Script (`script2.sh`)
+- Checks whether Git is installed
+- Displays Git version
+
+---
+
+### 3. Directory Auditor (`script3.sh`)
+- Checks important directories:
+  - /etc
+  - /home
+  - /usr/bin
+- Displays permissions and size
+
+---
+
+### 4. Log Analyzer (`script4.sh`)
+- Reads system log file
+- Counts number of "error" entries
+
+---
+
+### 5. Manifest Generator (`script5.sh`)
+- Takes user input
+- Generates a simple open source statement
+- Saves output to a file
+
+---
+
+## ▶️ How to Run Scripts
+
+Make scripts executable:
+```bash
+chmod +x *.sh
